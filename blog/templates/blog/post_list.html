@@ -3,19 +3,15 @@
         <title>Mia pagina</title>
     </head>
     <body>
-        <div>
-            <h1><a href="">Diego Dolcetti</a></h1>
-        </div>
-
-        <div>
-            <h2><a href="">Mio primo post</a></h2>
-            <p>Questo è il mio primo post</p>
-        </div>
-
-        <div>
-            <h2><a href="">Mio secondo post</a></h2>
-            <p>Questo è il mio secondo post</p>
-        </div>
-		<p>published: 14.06.2014, 12:14</p>
+	<div>
+		<h1><a href="/">PRIMA PAGIANA WEB CON DJANGO</a></h1>
+	</div>
+	{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+	{% endfor %}
     </body>
 </html>
